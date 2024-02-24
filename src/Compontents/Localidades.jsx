@@ -1,26 +1,36 @@
-import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Localidades() {
   const [provincias, setProvincias] = useState([]);
-  const municipio = `https://apis.datos.gob.ar/georef/api/municipios?provincia=${provincias}&max=5`;
+  const [municipios, setMunicipios] = useState([]);
+  const municipioAPI = `https://apis.datos.gob.ar/georef/api/localidades?provincia=${provincias}`;
+  const provinciasAPI = "https://apis.datos.gob.ar/georef/api/provincias";
+
+  useEffect(() => {
+    cargarProvincias();
+  }, []); // Solo se ejecutará una vez al montar el componente
+
+  useEffect(() => {
+    cargarMunicipio();
+  }, [provincias]);
 
   function cargarProvincias() {
-    fetch("https://apis.datos.gob.ar/georef/api/provincias")
+    fetch(provinciasAPI)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.provincias[1].nombre);
+        setProvincias(data.provincias);
+      })
+      .catch((error) => {
+        console.error("Error fetching data", error);
+      });
+  }
 
-        data.provincias.map((provincia, index) => {
-          console.log(provincia.nombre);
-          return (
-            <select key={index}>
-            <option  value={provincia.id}>
-              {provincia.nombre}
-            </option>
-            </select>
-          );
-        });
+  function cargarMunicipio() {
+    fetch(municipioAPI)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        console.log("Provincias",provincias)
       })
       .catch((error) => {
         console.error("Error fetching data", error);
@@ -28,12 +38,16 @@ function Localidades() {
   }
 
   return (
-    <label className="flex flex-col" onLoad={cargarProvincias}>
-
-
-
+    <label className="flex flex-col">
+      Seleccione provincia
+      <select>
+        {provincias.map((provincia, index) => (
+          <option key={index} value={provincia.id}>
+            {provincia.nombre}
+          </option>
+        ))}
+      </select>
     </label>
   );
 }
-
 export default Localidades;
