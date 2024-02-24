@@ -1,4 +1,4 @@
-import React from "react";
+
 import Flota1 from "../assets/images/Flota1.jpg";
 import { Mision, Choice, Ethic } from "../assets/SVGS";
 

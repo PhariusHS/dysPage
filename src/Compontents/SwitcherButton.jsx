@@ -22,7 +22,7 @@ function SwitcherButton() {
         onClick={() => ClickHandler(3)}
         className="mx-5 bg-slate-500 rounded-lg px-3 py-3"
       >
-        Distancia
+        Datos
       </button>
 
     </div>

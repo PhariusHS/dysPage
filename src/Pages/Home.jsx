@@ -1,4 +1,4 @@
-import React from "react";
+
 import FlotaHome from "../assets/images/FlotaHome.jpg";
 import { ArrowDown } from "../assets/SVGS";
 

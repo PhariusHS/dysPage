@@ -1,4 +1,4 @@
-import React from "react";
+
 import Flota1 from "../assets/images/Flota1.jpg";
 import { Communication, Quality, Security } from "../assets/SVGS";
 

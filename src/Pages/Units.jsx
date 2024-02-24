@@ -1,4 +1,4 @@
-import React from "react";
+
 import FlipCard from "../Compontents/FlipCard";
 import Flota1 from "../assets/images/Flota1.jpg";
 

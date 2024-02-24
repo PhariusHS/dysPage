@@ -1,9 +1,9 @@
-import React from "react";
+
 import SwitcherButton from "../Compontents/SwitcherButton";
 import { useMapper } from "../context/MapperContext";
 import SliderUnities from "../Compontents/SliderUnities";
 import FormCarga from "../Compontents/FormCarga";
-import Routes from "../Compontents/Routes";
+
 
 
 function Mapper() {
@@ -28,7 +28,7 @@ function Mapper() {
         {value != 1 && (
           <div className="h-[820px]">
             {value === 2 && <FormCarga/>}
-            {value === 3 && <Routes/>}
+            {value === 3 && <h1>S</h1>}
           </div>
         )}
 
