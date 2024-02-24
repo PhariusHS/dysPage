@@ -1,52 +1,39 @@
-import React from 'react'
+import React from "react";
+import { useState } from "react";
 
 function Localidades() {
+  const [provincias, setProvincias] = useState([]);
+  const municipio = `https://apis.datos.gob.ar/georef/api/municipios?provincia=${provincias}&max=5`;
 
-function provincia() {
+  function cargarProvincias() {
     fetch("https://apis.datos.gob.ar/georef/api/provincias")
-    .then(res => res.json())
-    .then(data => {
-        console.log(data.provincias[1].nombre)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.provincias[1].nombre);
 
-        data.provincias.map((provincias) => {
-            return <option>{[provincias].nombre}</option>
-        
-        })
+        data.provincias.map((provincia, index) => {
+          console.log(provincia.nombre);
+          return (
+            <select key={index}>
+            <option  value={provincia.id}>
+              {provincia.nombre}
+            </option>
+            </select>
+          );
+        });
+      })
+      .catch((error) => {
+        console.error("Error fetching data", error);
+      });
+  }
 
-    })
-    .catch(error => {
-    
-        console.error("Error fetching data", error)
+  return (
+    <label className="flex flex-col" onLoad={cargarProvincias}>
 
-    
-    })
+
+
+    </label>
+  );
 }
 
-
-function municipio(provincia) {
-    fetch(`https://apis.datos.gob.ar/georef/api/municipios?provincia=${provincia}&max=5`)
-    .then(res => res.ok ? res.json() : Promise.reject(res))
-    .then(json => {
-        console.log(json)
-    })
-    .catch(error => {
-
-    })
-}
-
-return (
-
-    <select onClick={provincia}>
-
-        ASJDHASKHDKAS
-
-    </select>
-
-)
-
-
-}
-
-
-
-export default Localidades
+export default Localidades;
