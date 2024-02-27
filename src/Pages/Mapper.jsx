@@ -3,6 +3,7 @@ import SwitcherButton from "../Compontents/SwitcherButton";
 import { useMapper } from "../context/MapperContext";
 import SliderUnities from "../Compontents/SliderUnities";
 import FormCarga from "../Compontents/FormCarga";
+import FormData from '../Compontents/FormData'
 
 
 
@@ -28,7 +29,7 @@ function Mapper() {
         {value != 1 && (
           <div className="h-[820px]">
             {value === 2 && <FormCarga/>}
-            {value === 3 && <h1>S</h1>}
+            {value === 3 && <FormData/>}
           </div>
         )}
 

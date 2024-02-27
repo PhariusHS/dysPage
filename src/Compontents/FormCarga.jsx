@@ -7,10 +7,13 @@ function FormCarga() {
 
   return (
     <form className="py-16 mx-2" action="">
-      <fieldset className="border-2 border-yellow-300 flex flex-col py-10 my-5 px-10">
-        <legend className="font-bold text-xl">Detalle de la carga</legend>
+      <fieldset className="border-4 border-yellow-300 flex flex-col py-10 my-5 px-10 h-[26rem] w-[26rem]">
+        <span className="font-bold text-xl justify-center items-center flex">
+          Detalle de la carga
+        </span>
         <div>
-          <div className="flex flex-col my-5">
+          <label className="font-semibold mt-5 flex">Toneladas de carga:</label>
+          <div className="grid grid-cols-2 mb-5 justify-center items-center">
             <label>
               <input
                 className="font-semibold my-2 "
@@ -86,22 +89,20 @@ function FormCarga() {
           </div>
         </div>
 
-        <div className="flex flex-col">
-
-          <Localidades/>
-
-        </div>
-
-        <legend>¿Cual es el contenido de la carga?</legend>
+        <span>¿Cual es el contenido de la carga?</span>
 
         <input
           type="text"
-          placeholder="Ej: Madera, Telgopor"
-          className="border-2 rounded-lg border-black"
+          placeholder=" Ej: Madera, Telgopor"
+          className="border  border-black"
           onChange={(e) => {
             setCarga(e.target.value);
           }}
         />
+
+        <div className="flex flex-col">
+          <Localidades />
+        </div>
       </fieldset>
     </form>
   );

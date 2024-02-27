@@ -5,12 +5,8 @@ import Semifurgon from "../assets/Camiones/Semifurgon.png";
 import Semisider from "../assets/Camiones/Semisider.png";
 import SemiVB from "../assets/Camiones/SemiVB.png";
 
-
-
 const MapperContext = createContext();
 const APILink = "https://sheetdb.io/api/v1/2qspl7xw9kjwj";
-
-
 
 export const useMapper = () => {
   const context = useContext(MapperContext);
@@ -36,6 +32,12 @@ export function MapperProvider({ children }) {
   const [submit, setSubmit] = useState(false);
   const [toneladas, setToneladas] = useState("");
   const [carga, setCarga] = useState("");
+  const [partida, setPartida] = useState("");
+  const [destino, setDestino] = useState("");
+  const [numero, setNumero] = useState("");
+  const [area, setArea] = useState("");
+  const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -55,17 +57,10 @@ export function MapperProvider({ children }) {
   };
 
   useEffect(() => {
-
-    if (toneladas != "" && carga != "") {
-
-      setSubmit(true)
-
+    if (toneladas != "" && carga != "" && partida != "" && destino != "") {
+      setSubmit(true);
     }
-   
-  }, [toneladas, carga])
-  
-    
-
+  }, [toneladas, carga, partida, destino]);
 
   const newPedido = () => {
     fetch(APILink, {
@@ -78,14 +73,15 @@ export function MapperProvider({ children }) {
         data: [
           {
             id: "INCREMENT",
-            nombre: "Mark",
+            nombre: nombre,
             camion: images[currentIndex].name,
             toneladas: toneladas,
             carga: carga,
-            partida: "Cordoba",
-            destino: "Misiones",
-            numero: "3564686432",
-            area: "+54",
+            partida: partida,
+            destino: destino,
+            numero: numero,
+            area: area,
+            email:email
           },
         ],
       }),
@@ -107,6 +103,12 @@ export function MapperProvider({ children }) {
         setToneladas,
         setCarga,
         submit,
+        setPartida,
+        setDestino,
+        setNumero,
+        setArea,
+        setNombre,
+        setEmail,
       }}
     >
       {children}
