@@ -59,7 +59,7 @@ function Slider() {
         {images.map((image, index) => {
           return (
             <div className="slide" key={index}>
-              <img src={image} alt="" />
+              <img src={image} alt=""/>
             </div>
           );
         })}

@@ -5,7 +5,7 @@ import { Mision, Choice, Ethic } from "../assets/SVGS";
 
 function About() {
   return (
-    <section className="relative h-full md:h-screen w-full flex  items-center justify-center mt-[6rem] md:mt-[16rem] xl:mt-[12rem] mb-[6rem] md:mb-[24rem] xl:mb-[10rem]">
+    <section className="relative h-full max-h-screen md:h-screen w-full flex  items-center justify-center mt-[6rem] md:mt-[22rem] xl:mt-[12rem] mb-[6rem] md:mb-[24rem] xl:mb-[10rem]">
       <article className="flex lg:flex-row flex-col items-center justify-center  ">
         <div className="flex flex-col xl:mx-20 mx-5  mb-14">
           <span className="font-bold text-xl mb-5">¿Quienes somos?</span>

@@ -4,13 +4,14 @@ import { Communication, Quality, Security } from "../assets/SVGS";
 
 function Usself() {
   return (
-    <section className="bg-[#F9FAFB] relative h-screen w-full flex  items-center justify-center mt-[6rem] md:mt-[24rem] xl:mt-[10rem]">
+    <section className="bg-[#fff] relative max-h-screen h-screen w-full flex  items-center justify-center mt-[6rem] md:mt-[28rem] xl:mt-[10rem]">
       <article className="flex lg:flex-row flex-col items-center justify-center  ">
         <div className="flex flex-col xl:mx-20 mx-5  mb-14 lg:order-2 mt-72 md:mt-0">
           <span className="font-bold text-xl mb-5">Nuestra flota</span>
           <figure className="h-auto max-w-[42rem] rounded-lg shadow-xl">
             <img
               src={Flota1}
+              loading="lazy"
               alt=""
               className="w-[30rem] h-[20rem] md:w-[42rem] md:h-[42rem] md:max-w-2xl md:max-h-[42rem] rounded-lg"
             />

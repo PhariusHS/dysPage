@@ -4,13 +4,13 @@ import Flota1 from "../assets/images/Flota1.jpg";
 
 function Units() {
   return (
-    <section className="min-h-screen bg-[#fff] flex flex-col mt-[26rem] md:mt-[20rem] xl:mt-12 mb-6 md:mb-24 xl:mb-10">
+    <section className="min-h-screen bg-[#fff] flex flex-col mt-[30rem] md:mt-[26rem] xl:mt-[10rem] mb-6 md:mb-24 xl:mb-10">
       <article className="flex md:flex-row flex-col justify-between items-center md:mb-10 md:mx-20">
-        <h2 className="md:text-4xl text-3xl font-extrabold w-full">
+        <h2 className="md:text-4xl text-3xl font-extrabold w-full mx-2">
           Llega a cualquier parte, <br /> con cualquier carga
         </h2>
 
-        <span className="text-1xl mt-8 md:mt-4  md:max-w-80 md:mx-10 ">
+        <span className="text-1xl mt-8 md:mt-4  md:max-w-80 md:mx-10 mx-4 ">
           Asegura la entrega de tu carga en cualquier localidad con nuestras
           unidades, ofreciendo eficiencia y eficacia al alcance de tus manos.
         </span>

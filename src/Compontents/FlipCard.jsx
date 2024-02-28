@@ -5,7 +5,7 @@ function FlipCard(props) {
     <article className="w-[400px] h-[520px] bg-transparent group perspective md:mx-10 my-5 hover:cursor-help">
       <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-1000 ">
         <div className="absolute border-2 w-full h-full backface-hidden">
-          <img src={props.FrontImg} className="w-full h-full" />
+          <img src={props.FrontImg} className="w-full h-full" loading="lazy" />
         </div>
 
         <div className="absolute my-rotate-y-180 backface-hidden w-full h-full bg-slate-300">
